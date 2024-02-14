@@ -1,5 +1,6 @@
 package ru.springgb.clienttask.service;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import ru.springgb.cliententity.model.Task;
 import java.util.List;
 
 @Service
+@ComponentScan
 public interface TaskService {
 
     Task createTask(Task task);
