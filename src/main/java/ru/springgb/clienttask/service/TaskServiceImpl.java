@@ -8,8 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 //import ru.springgb.clientexecutor.model.Executor;
 import ru.springgb.cliententity.model.Task;
-//import ru.springgb.clientexecutor.logAspect.TrackUserAction;
-//import ru.springgb.clientexecutor.repository.ExecutorRepository;
+import ru.springgb.clienttask.logAspect.TrackUserAction;
+//import ru.springgb.clienttask.repository.ExecutorRepository;
 import ru.springgb.clienttask.repository.TaskRepository;
 
 import java.util.Collections;
@@ -57,7 +57,7 @@ public class TaskServiceImpl implements TaskService {
 //
 //    }
 
-    //@TrackUserAction
+    @TrackUserAction
     @Override
     public Task save(Task task) {
         return taskRepository.save(task);
@@ -68,7 +68,7 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.findAll();
     }
 
-   // @TrackUserAction
+   @TrackUserAction
     @Override
     public Task getTaskById(Long id) {
         return taskRepository.findById(id)
@@ -86,7 +86,7 @@ public class TaskServiceImpl implements TaskService {
         return tasks;
     }
 
-    //@TrackUserAction
+    @TrackUserAction
     @Override
     public Task updateTask(Long id, Task task) {
         Task taskStaraya = getTask(id);
@@ -107,7 +107,7 @@ public class TaskServiceImpl implements TaskService {
 //
 //
 //
-//    @TrackUserAction
+    @TrackUserAction
     @Override
     public void deleteById(Long id) {
         taskRepository.deleteById(id);
