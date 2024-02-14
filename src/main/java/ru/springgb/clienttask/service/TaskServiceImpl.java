@@ -79,7 +79,7 @@ public class TaskServiceImpl implements TaskService {
         return getAllTasks().stream().filter(task -> task.getId().equals(id)).findFirst().orElse(null);
     }
 
-    //&&&&&&&&
+
     @Override
     public List<Task> getTaskStatus(String status) {
         List<Task> tasks =   taskRepository.findAll().stream().filter(task -> task.getStatus().equals(status)).toList();
